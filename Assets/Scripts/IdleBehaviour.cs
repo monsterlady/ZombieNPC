@@ -11,9 +11,10 @@ public class IdleBehaviour : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("isBumped",true);
+           // animator.SetBool("isBumped",true);
         }
     }
 
@@ -21,4 +22,6 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
     }
+    
+    
 }
