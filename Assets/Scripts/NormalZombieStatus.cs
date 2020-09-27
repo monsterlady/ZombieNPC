@@ -17,7 +17,7 @@ public class NormalZombieStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_player.Equals(null))
+        if (_player != null)
         {
             float _distance = Vector3.Distance(gameObject.transform.position, _player.transform.position);
             //计算僵尸和玩家之间的距离
