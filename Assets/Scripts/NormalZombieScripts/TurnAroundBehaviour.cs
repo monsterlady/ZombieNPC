@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleBehaviour : StateMachineBehaviour
+public class TurnAroundBehaviour : StateMachineBehaviour
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
-    }
-
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!player.GetComponent<PlayerBehaviour>().SoundMade)
         {
-           // animator.SetBool("isBumped",true);
+            animator.SetBool("heard",false);
+        }
+        else
+        {
+            animator.SetBool("heard",true);
         }
     }
 
@@ -22,6 +21,4 @@ public class IdleBehaviour : StateMachineBehaviour
     {
         base.OnStateExit(animator, stateInfo, layerIndex);
     }
-    
-    
 }
