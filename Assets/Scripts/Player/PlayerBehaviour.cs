@@ -7,11 +7,6 @@ using UnityEngine.Rendering;
 public class PlayerBehaviour : MonoBehaviour
 {
     private bool _soundMade = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     
     // Update is called once per frame
     void Update()
@@ -19,7 +14,6 @@ public class PlayerBehaviour : MonoBehaviour
         //make a sound
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            //TODO 吸引僵尸
             _soundMade = true;
         }
         else

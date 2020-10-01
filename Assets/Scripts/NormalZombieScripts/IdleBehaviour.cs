@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class IdleBehaviour : StateMachineBehaviour
 {
-    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        base.OnStateEnter(animator, stateInfo, layerIndex);
-    }
-
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -21,11 +16,4 @@ public class IdleBehaviour : StateMachineBehaviour
             animator.SetBool("heard",false);
         }
     }
-
-    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        base.OnStateExit(animator, stateInfo, layerIndex);
-    }
-    
-    
 }
