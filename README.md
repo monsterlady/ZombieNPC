@@ -52,7 +52,7 @@ will not stop attacking target untill it hear another sound
 
 👤 **Ruikang Xu**
 
-* Github: [@Bestitz](https://github.com/Bestitz)
+* Github: [@Bestitz](https://github.com/monsterlady)
 
 
 
