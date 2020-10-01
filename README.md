@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Zombie State Machine 👋</h1>
+<h1 align="center">Zombie State Machine 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-V0.1-blue.svg?cacheSeconds=2592000" />
   <a href="doc/UserPDF/html/index.html" target="_blank">
@@ -16,7 +16,7 @@
 Doxygen documentation path : doc/UserPDF/html/index.html
 ```
 
-### ✨ [Demo](https://monsterlady.github.io/ZombieNPC/)
+### ✨ [webGL Demo](https://monsterlady.github.io/ZombieNPC/)
 
 ## How to play
 
