@@ -40,6 +40,8 @@ Slow movement,
 poor eyesight and hearing(has a range), 
 will not actively attack the player unless the player makes a sound or being bumped
 ```
+![avatar](https://github.com/monsterlady/ZombieNPC/blob/master/doc/NormalZombie1.png)
+![avatar](https://github.com/monsterlady/ZombieNPC/blob/master/doc/normalZombie2.png)
 ```sh
 Crazy Zombie:
 move fast,
@@ -47,7 +49,7 @@ can not see anything,
 sensitive to sound, it will run towards whereever the sound made then starting to attack
 will not stop attacking target untill it hear another sound
 ```
-
+![avatar](https://github.com/monsterlady/ZombieNPC/blob/master/doc/crazyZombieState.png)
 
 ## Author
 
