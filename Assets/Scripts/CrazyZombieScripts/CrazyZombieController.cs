@@ -18,23 +18,24 @@ public class CrazyZombieController : MonoBehaviour
     {
         if (_hasTarget)
         {
-            //计算距离
+            //calculate distance between target and crazyzombie
             float _distance = Vector3.Distance(gameObject.transform.position, _tempPosition);
             if (_distance < attackDistance)
             {
-                //开始攻击
+                //start to attack
                 _hasTarget = false;
                 gameObject.GetComponent<Animator>().SetBool("isCaptured", true);
             }
             else
             {
-                //进入追击
                 
-                //旋转角度
+                
+                //rotate crazy zombie's angle
                 Vector3 targetPostition = new Vector3( _tempPosition.x, 
                     gameObject.transform.position.y, 
                     _tempPosition.z ) ;
                 gameObject.transform.LookAt( targetPostition ) ;
+                //start to chase
                 gameObject.GetComponent<Animator>().SetBool("soundMade", true);
             }
         }
@@ -43,25 +44,24 @@ public class CrazyZombieController : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("isCaptured", false);
         }
 
-        //如果玩家发出了声音
+        //if player made a sound
         if (_player.GetComponent<PlayerBehaviour>().SoundMade)
         {
-            //听见声音
             gameObject.GetComponent<Animator>().SetBool("soundMade", true);
-            //设置声音坐标
+            //set target position
             _tempPosition = _player.transform.position;
             _hasTarget = true;
-            //计算距离
+            //calculate the distance
             float _distance = Vector3.Distance(gameObject.transform.position, _tempPosition);
             if (_distance < attackDistance)
             {
-                //开始攻击
+                //start to attack
                 _hasTarget = false;
                 gameObject.GetComponent<Animator>().SetBool("isCaptured", true);
             }
             else
             {
-                //进入追击
+                //start to chase
                 gameObject.GetComponent<Animator>().SetBool("soundMade", true);
             }
         }
