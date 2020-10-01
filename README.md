@@ -33,17 +33,18 @@ In this Project, the state machine pattern follows the abstract class ***StateMa
 and the NPC(zombies in this case) cooperate that with the Controller which extends ***MonoBehaviour***
 
 ## NPC Intro
+the StateMachine Designs could be found in ***.Assets/Scenes***
 ```sh
 Normal Zombie: 
 Slow movement, 
 poor eyesight and hearing(has a range), 
-will not actively attack the player unless the player makes a sound or collides
+will not actively attack the player unless the player makes a sound or being bumped
 ```
 ```sh
 Crazy Zombie:
 move fast,
 can not see anything,
-sensitive to sound, it will run towards whereever the sound made then start to attack
+sensitive to sound, it will run towards whereever the sound made then starting to attack
 will not stop attacking target untill it hear another sound
 ```
 
