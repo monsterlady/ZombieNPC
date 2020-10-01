@@ -63,4 +63,4 @@ Copyright © 2020 [Ruikang Xu](https://github.com/Bestitz).<br />
 This project is [MIT](https://github.com/monsterlady/ZombieNPC/blob/master/LICENSE) licensed.
 
 ***
-_This README was Write with ❤️ _
+_This README was Wrote by Ruikang's ❤️_
