@@ -11,15 +11,42 @@
 
 > FSM AI project
 
-### 🏠 [Homepage](https://monsterlady.github.io/ZombieNPC/)
+### 🏠 [Doxygen Documents](#)
+```sh
+Doxygen documentation path : doc/UserPDF/html/index.html
+```
 
 ### ✨ [Demo](https://monsterlady.github.io/ZombieNPC/)
 
-## Usage
+## How to play
+
+**W,A,S,D** move the player, **left shift** boost, **space** to jump,
+Hold **right button** of mouse to attract zombies.
+
+## Environment
 
 ```sh
 Unity Version 2020.1.5f1
 ```
+## FSM Design
+In this Project, the state machine pattern follows the abstract class ***StateMachineBehaviour*** with ***Animator***,
+and the NPC(zombies in this case) cooperate that with the Controller which extends ***MonoBehaviour***
+
+## NPC Intro
+```sh
+Normal Zombie: 
+Slow movement, 
+poor eyesight and hearing(has a range), 
+will not actively attack the player unless the player makes a sound or collides
+```
+```sh
+Crazy Zombie:
+move fast,
+can not see anything,
+sensitive to sound, it will run towards whereever the sound made then start to attack
+will not stop attacking target untill it hear another sound
+```
+
 
 ## Author
 
@@ -27,14 +54,12 @@ Unity Version 2020.1.5f1
 
 * Github: [@Bestitz](https://github.com/Bestitz)
 
-## Show your support
 
-Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
 Copyright © 2020 [Ruikang Xu](https://github.com/Bestitz).<br />
-This project is [MIT](todo) licensed.
+This project is [MIT](https://github.com/monsterlady/ZombieNPC/blob/master/LICENSE) licensed.
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
