@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> FSM AI project
+> Two types of zombie that follows FSM pattern in Animator
 
 ### 🏠 [Doxygen Documents](#)
 ```sh
@@ -63,4 +63,4 @@ Copyright © 2020 [Ruikang Xu](https://github.com/Bestitz).<br />
 This project is [MIT](https://github.com/monsterlady/ZombieNPC/blob/master/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+_This README was Write with ❤️ _
