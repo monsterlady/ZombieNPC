@@ -51,6 +51,12 @@ will not stop attacking target untill it hear another sound
 ```
 ![avatar](https://github.com/monsterlady/ZombieNPC/blob/master/doc/crazyZombieState.png)
 
+```sh
+Interaction between NPCs:
+It happens when normal zombie bump crazy zombie, the former will be knocked back, the latter will adjust direction to aviod being bothered.
+```
+![avatar](https://github.com/monsterlady/ZombieNPC/blob/master/doc/GIF%202020-10-2%2020-45-35.gif)
+
 ## Author
 
 👤 **Ruikang Xu**
