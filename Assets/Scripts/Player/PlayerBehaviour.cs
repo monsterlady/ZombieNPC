@@ -6,12 +6,16 @@ using UnityEngine.Rendering;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    /// <summary>
+    /// init the sound as false
+    /// </summary>
     private bool _soundMade = false;
     
-    // Update is called once per frame
+    /// <summary>
+    /// player could make a sound through here
+    /// </summary>
     void Update()
     {
-        //make a sound
         if (Input.GetKey(KeyCode.Mouse1))
         {
             _soundMade = true;
@@ -22,5 +26,9 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// method that allows other entity knows if the player is making sounds,
+    /// Readable only
+    /// </summary>
     public bool SoundMade => _soundMade;
 }

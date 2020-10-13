@@ -7,8 +7,15 @@ using UnityStandardAssets.Cameras;
 
 public class CrazyZombieController : MonoBehaviour
 {
+    /// <summary>
+    /// Set player as target
+    /// </summary>
     public GameObject _player;
+    /// <summary>
+    /// in this distance, crazyzombie will trigger attackstate
+    /// </summary>
     public float attackDistance;
+    
     private Vector3 _tempPosition;
     private bool _hasTarget = false;
     private ScrollRect.MovementType movementType;
@@ -18,11 +25,11 @@ public class CrazyZombieController : MonoBehaviour
     {
         if (_hasTarget)
         {
-            //calculate distance between target and crazyzombie
+            /// calculate distance between target and crazyzombie
             float _distance = Vector3.Distance(gameObject.transform.position, _tempPosition);
             if (_distance < attackDistance)
             {
-                //start to attack
+                /// start to attack
                 _hasTarget = false;
                 gameObject.GetComponent<Animator>().SetBool("isCaptured", true);
             }
@@ -30,12 +37,12 @@ public class CrazyZombieController : MonoBehaviour
             {
                 
                 
-                //rotate crazy zombie's angle
+                /// rotate crazy zombie's angle
                 Vector3 targetPostition = new Vector3( _tempPosition.x, 
                     gameObject.transform.position.y, 
                     _tempPosition.z ) ;
                 gameObject.transform.LookAt( targetPostition ) ;
-                //start to chase
+                /// start to chase
                 gameObject.GetComponent<Animator>().SetBool("soundMade", true);
             }
         }
@@ -44,30 +51,30 @@ public class CrazyZombieController : MonoBehaviour
             gameObject.GetComponent<Animator>().SetBool("isCaptured", false);
         }
 
-        //if player made a sound
+        /// if player made a sound
         if (_player.GetComponent<PlayerBehaviour>().SoundMade)
         {
             gameObject.GetComponent<Animator>().SetBool("soundMade", true);
-            //set target position
+            /// set target position
             _tempPosition = _player.transform.position;
             _hasTarget = true;
-            //calculate the distance
+            /// calculate the distance
             float _distance = Vector3.Distance(gameObject.transform.position, _tempPosition);
             if (_distance < attackDistance)
             {
-                //start to attack
+                /// start to attack
                 _hasTarget = false;
                 gameObject.GetComponent<Animator>().SetBool("isCaptured", true);
             }
             else
             {
-                //start to chase
+                /// start to chase
                 gameObject.GetComponent<Animator>().SetBool("soundMade", true);
             }
         }
         else
         {
-            //未听见
+            /// not hear sound
             gameObject.GetComponent<Animator>().SetBool("soundMade", false);
         }
     }
@@ -77,11 +84,11 @@ public class CrazyZombieController : MonoBehaviour
     /// </summary>
     void OnCollisionEnter(Collision collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        //Only Player and Zombie(Normal and Crazy) could bump.
+        /// Check for a match with the specified name on any GameObject that collides with your GameObject
+        /// Only Player and Zombie(Normal and Crazy) could bump.
         if (collision.gameObject.name == "Player")
         {
-            //crazy zombie only turn around when he is in Idle state
+            /// crazy zombie only turn around when he is in Idle state
             if (gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(gameObject.layer).IsName("Idle"))
             {
                 gameObject.GetComponent<Animator>().SetBool("bumped",true);
@@ -94,8 +101,8 @@ public class CrazyZombieController : MonoBehaviour
     /// </summary>
     private void OnTriggerExit(Collider collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        //Only Player and Zombie(Normal and Crazy) could bump.
+        /// Check for a match with the specified name on any GameObject that collides with your GameObject
+        /// Only Player and Zombie(Normal and Crazy) could bump.
         if (collision.gameObject.name == "NormalZombie" )
         {
             if (gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(gameObject.layer).IsName("Idle"))

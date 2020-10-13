@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,164,133"/>
+<area shape="rect" id="node2" href="$class_adjust_direaction_behaviour.html" title=" " alt="" coords="212,5,385,32"/>
+<area shape="rect" id="node3" href="$class_chase_phase_behaviour.html" title=" " alt="" coords="223,56,375,83"/>
+<area shape="rect" id="node4" href="$class_idle_behaviour.html" title=" " alt="" coords="249,107,348,133"/>
+<area shape="rect" id="node5" href="$class_knock_walk_behaviour.html" title=" " alt="" coords="226,157,371,184"/>
+<area shape="rect" id="node6" href="$class_turn_around_behaviour.html" title=" " alt="" coords="227,208,371,235"/>
+</map>

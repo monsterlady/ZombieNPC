@@ -7,41 +7,49 @@ using UnityEngine.Serialization;
 
 public class NormalZombieController : MonoBehaviour
 {
+    /// <summary>
+    /// distance between player and zombie is shorter than it, then zombie will chase player.
+    /// </summary>
     public float chaseDistance;
+    /// <summary>
+    /// in this distance, zombie will attack player, attackDistance can not be larger than chaseDistance
+    /// </summary>
     public float attackDistance;
+    /// <summary>
+    /// set  player as a target
+    /// </summary>
     public GameObject _player;
     private float _angle;
     
-    // Update is called once per frame
+    /// Update is called once per frame
     void Update()
     {
             float _distance = Vector3.Distance(gameObject.transform.position, _player.transform.position);
-            //the distance between player and normalZombie
+            /// the distance between player and normalZombie
             if ( _distance > attackDistance && _distance <= chaseDistance)
             {
-                //beyond the attack range
+                /// beyond the attack range
                 gameObject.GetComponent<Animator>().SetBool("isCaptured",false);
-                //start to chase target(Player)
+                /// start to chase target(Player)
                 gameObject.GetComponent<Animator>().SetBool("isToofar",false);
             }
             else if (_distance < attackDistance)
             {
-                //stop chase target to attack target
+                /// stop chase target to attack target
                 gameObject.GetComponent<Animator>().SetBool("isCaptured",true);
             }
             else
             {
-                //beyond the attack range
+                /// beyond the attack range
                 gameObject.GetComponent<Animator>().SetBool("isCaptured",false);
-                //stop chasing as the distance is too far away
+                /// stop chasing as the distance is too far away
                 gameObject.GetComponent<Animator>().SetBool("isToofar",true);
             }
             
-            //rotate to a proper angular
+            /// rotate to a proper angular
 
             if (!gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(gameObject.layer).IsName("Idle"))
             {
-                //旋转角度
                 Vector3 targetPostition = new Vector3( _player.transform.position.x, 
                     gameObject.transform.position.y, 
                     _player.transform.position.z ) ;
@@ -51,8 +59,8 @@ public class NormalZombieController : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        //Only Player and Zombie(Normal and Crazy) could bump.
+        /// Check for a match with the specified name on any GameObject that collides with your GameObject
+        /// Only Player and Zombie(Normal and Crazy) could bump.
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "CrazyZombie" )
         {
             gameObject.GetComponent<Animator>().SetBool("bumped",true);
@@ -69,8 +77,8 @@ public class NormalZombieController : MonoBehaviour
     
     void OnTriggerEnter(Collider collision)
     {
-        //Check for a match with the specified name on any GameObject that collides with your GameObject
-        //Only Player and Zombie(Normal and Crazy) could bump.
+        /// Check for a match with the specified name on any GameObject that collides with your GameObject
+        /// Only Player and Zombie(Normal and Crazy) could bump.
         if (collision.gameObject.name == "Player" || collision.gameObject.name == "CrazyZombie" )
         {
             gameObject.GetComponent<Animator>().SetBool("bumped",true);
