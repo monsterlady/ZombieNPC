@@ -11,7 +11,6 @@
 
 > Two types of zombie that follows FSM pattern in Animator
 
-# AI_StateMachine_DronesDemo
 ## What is this Project?
 
 It is a simple implementation of an :robot: A.I. behaviour :suspect:, by using the 'State Pattern' and State Machines in Unity3D :video_game: and C#. It is fully based on two great Blog Articles written by the excellent Tutor:
