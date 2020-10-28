@@ -29,10 +29,14 @@ https://unity3d.college/2017/05/26/unity3d-design-patterns-state-basic-state-mac
 Link:
 https://www.youtube.com/watch?v=YdERlPfwUb0
 
+### 4- ADVANCED AI IN UNITY (Made EASY) - STATE MACHINE BEHAVIORS
+Link:
+https://www.youtube.com/watch?v=dYi-i83sq5g
+
 
 ## Notes:
 
-:bulb: There are 2 different AI in the code:
+:bulb: There are 2 different AI in the project:
 
 #### :low_brightness: 1- Normal Zombie:
 An A.I. example using substatemachine : An Super-Big Switch - Case with too many cases. Each 'animator' behaviour would correspond to a State of the A.I. (for instance: Walk, knock back, chase, etc.);
