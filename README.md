@@ -13,8 +13,7 @@
 
 ## What is this Project?
 
-It is a simple implementation of an :robot: A.I. behaviour :suspect:, by using the 'State Pattern' and State Machines in Unity3D :video_game: and C#. It is fully based on two great Blog Articles written by the excellent Tutor:
-:necktie: Jason Weimann, of unity3d.college.
+It is a simple implementation of an :robot: A.I. behaviour :suspect:, by using the 'State Pattern' and State Machines in Unity3D :video_game: and C#. It is fully based on two great Blog Articles on internets.
 
 
 ### 1- Unity3D AI with State Machine (FSM), Drones, and Lasers!:gun:
@@ -33,33 +32,28 @@ https://www.youtube.com/watch?v=YdERlPfwUb0
 
 ## Notes:
 
-:bulb: There are 2 important Scenes in the code:
+:bulb: There are 2 different AI in the code:
 
-#### :low_brightness: 1- DroneBadPractice:
-An A.I. example using bad coding practices: An Super-Big Switch - Case with too many cases. Each 'case' would correspond to a State of the A.I. (for instance: Walk, Shoot, Dance, etc.); and we would use an 'Enum' variable for the States Name.
+#### :low_brightness: 1- Normal Zombie:
+An A.I. example using substatemachine : An Super-Big Switch - Case with too many cases. Each 'animator' behaviour would correspond to a State of the A.I. (for instance: Walk, knock back, chase, etc.);
 
-#### :low_brightness: 2- Drone:
-The recommended A.I. implementation, using a well designed and simple 'State Pattern' in C#. 
-The Scripts and code for this Scene can be found inside the  'Assets/scripts/GoodStateMachine/'  folder.
-
-
-:bulb: I was motivated to rewrite this code because in the Tutorial Jason Weimann did not include the code of the State Machine Pattern, only the 'bad way' of writing A.I. (which is based on a BIIIIIG Switch-Case, with as many States as Enum Values). I think it might be available only to his Patreon Sponsors, which is understandable.
+#### :low_brightness: 2- Crazy Zombie:
+The recommended A.I. implementation, using a simple designed and simple 'animator State Pattern' in C# comparing to normal Zombie. 
+The Scripts and code for this AI can be found inside the  'Assets/Scripts/CrazyZombieScripts/'  folder.
 
 
-:bulb: This code is not :100: Optimized. It is intended to be a Template for Prototyping and making Game 'Proof-of-Concept' Demos. For making it a final product; it would be necessary to make some changes, for example: replacing the Raycasting implementation in the WanderState.cs class (one of the A.I. States) by one that does less Raycasts (and those Raycasts need to be limited in their extension and size), and we would need to remove the constant execution of GetComponent<>() from the collider. One possible solution would be to cache all game Characters that are to collide (in a Static Dictionary) inside a Component (maybe a Static Class), and compare in each Frame (update() execution) the Collider 'ID' with the one we would have cached (i.e.: a simple Search in the Dictionary, by 'ID'). Using well limited Raycasts is ok, but the command Debug.Raycast is just for 'debugging', so it would need to be commented out too.
+:bulb: I was motivated to write this code because of the tutorial from youtube and the animator usage which is way more understandable to me.
 
 
-:bulb: About the Lighting:
-I decided to test an Assets called 'VertexDynamicLightmap' (Vertex Lit Shader: Baked Shadows Realtime Light, made by: Nurface): to allow having Realtime Point Lights :flashlight: (one per Drone) with Baked Lighting (i.e.: a Directional source of light, which would be: :sunny: the Sun), basically Vertex Lit (Rendering Path). It works like a charm and looks fine. 
-You can download it in: https://assetstore.unity.com/packages/vfx/shaders/vertex-lit-shader-baked-shadows-realtime-light-75977
+:bulb: This code is not :100: Optimized. It is intended to be a Template for Prototyping and making Game 'Proof-of-Concept' Demos. For making it a final product; it would be necessary to make some changes, for example: adding more states like crouch, climbing and fall down etcs to make it smooth , and we would need to remove the constant execution of GetComponent<>() from the collider. One possible solution would be to cache all game Characters that are to collide (in a Static Dictionary) inside a Component (maybe a Static Class), and compare in each Frame (update() execution) the Collider 'ID' with the one we would have cached (i.e.: a simple Search in the Dictionary, by 'ID'). Using well limited Raycasts is ok, but the command Debug.Raycast is just for 'debugging', so it would need to be commented out too.
 
 
-:video_game: It was made in Unity 2018.4.0f1.
+:video_game: It was made in Unity 2020.1.5f1.
 
 
 I hope it to be useful for anybody studying A.I.
 
-AlMartson
+Ruikang Xu
 
 
 
@@ -78,7 +72,8 @@ Hold **right button** of mouse to attract zombies.
 ## Environment
 
 ```sh
-Unity Version 2020.1.5f1
+Unity 2020.1.5f1
+Windowns 10 64 bits
 ```
 ## FSM Design
 In this Project, the state machine pattern follows the abstract class ***StateMachineBehaviour*** with ***Animator***,
