@@ -1,6 +1,6 @@
 <h1 align="center">Zombie State Machine 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-V0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-V0.2-blue.svg?cacheSeconds=2592000" />
   <a href="doc/UserPDF/html/index.html" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -49,7 +49,7 @@ The Scripts and code for this AI can be found inside the  'Assets/Scripts/CrazyZ
 :bulb: I was motivated to write this code because of the tutorial from youtube and the animator usage which is way more understandable to me.
 
 
-:bulb: This code is not :100: Optimized. It is intended to be a Template for Prototyping and making Game 'Proof-of-Concept' Demos. For making it a final product; it would be necessary to make some changes, for example: adding more states like crouch, climbing and fall down etcs to make it smooth , and we would need to remove the constant execution of GetComponent<>() from the collider. One possible solution would be to cache all game Characters that are to collide (in a Static Dictionary) inside a Component (maybe a Static Class), and compare in each Frame (update() execution) the Collider 'ID' with the one we would have cached (i.e.: a simple Search in the Dictionary, by 'ID'). Using well limited Raycasts is ok, but the command Debug.Raycast is just for 'debugging', so it would need to be commented out too.
+:bulb: This code is not :100: Optimized. It is intended to be a Template for Prototyping and making Game 'Proof-of-Concept' Demos. For making it a final product; it would be necessary to make some changes, for example: adding more states like crouch, climbing and fall down etcs to make it smooth , and we would need to remove the constant execution of GetComponent<>() from the collider. One possible solution would be to cache all game Characters that are to collide (in a Static Dictionary) inside a Component (maybe a Static Class), and compare in each Frame (update() execution) the Collider 'ID' with the one we would have cached (i.e.: a simple Search in the Dictionary, by 'ID'). Using well limited Raycasts is ok, but the command Debug.Raycast is just for 'debugging', so it would need to be commented out too. One more problem here is collision between two gameobject would not happen if one of them is not Rigidbody, crazy zombie will fly away if it is being set as Rigidbody.In this case, I used OnTriggerEnter() Method to replace of OnCollisionEnter(), will update them if I find solution....
 
 
 :video_game: It was made in Unity 2020.1.5f1.
