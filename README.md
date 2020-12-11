@@ -76,7 +76,7 @@ Hold **right button** of mouse to attract zombies.
 ## Environment
 
 ```sh
-Unity 2020.1.5f1
+Unity 2020.1.5f1c1
 Windowns 10 64 bits
 ```
 ## FSM Design
